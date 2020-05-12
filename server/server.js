@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(express.static('assets'));
 
 // routes
-app.get('/', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
+app.get('/', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../index.html')));
 
 
 // 404 response/unhandled routes
