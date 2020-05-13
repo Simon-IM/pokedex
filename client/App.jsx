@@ -34,7 +34,7 @@ class App extends Component {
       <div>
         <Logo />
         <Searchbar handleClick={this.handleClick} handleChange={this.handleChange}/>
-        {/* <Results data={this.state.pokemon}/> */}
+        <Results data={this.state.pokemon}/>
       </div>
     );
   }
