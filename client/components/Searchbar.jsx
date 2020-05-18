@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Searchbar(props) {
+const Searchbar = (props) => {
   return (
-    <div>
-      <input type="text" onChange={props.handleChange}/>
+    <div className="Searchbar" >
+      <input type="text" placeholder="Enter Pokemon Here" onChange={props.handleChange}/>
       <button onClick={props.handleClick}>Search</button>
     </div>
   );

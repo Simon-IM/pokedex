@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './styles/styles.scss';
 
+// components
 import Logo from './components/Logo.jsx';
+import PokedexImg from './components/PokedexImg.jsx';
 import Searchbar from './components/Searchbar.jsx';
 import Results from './components/Results.jsx';
 
@@ -31,8 +33,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         <Logo />
+        <PokedexImg />
         <Searchbar handleClick={this.handleClick} handleChange={this.handleChange}/>
         <Results data={this.state.pokemon}/>
       </div>
