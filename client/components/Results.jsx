@@ -4,7 +4,7 @@ const Results = (props) => {
   const pokemon = props.data;
 
   return (
-    <div>
+    <div className="Results">
       <ul className="Results">
         <li>Name: {pokemon.name}</li>
         <li>Base Experience: {pokemon.base ? pokemon.base.experience : ''}</li>
@@ -13,7 +13,7 @@ const Results = (props) => {
         <li>Weight (lbs): {pokemon.weight}</li>
       </ul>
 
-      <img src={pokemon.sprites ? pokemon.sprites.front_shiny : ''}/>
+      <img src={pokemon.sprites ? pokemon.sprites.front_default : ''}/>
     </div>
   );
 }

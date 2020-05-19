@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlkWebpackPlugin = require('html-webpack-plugin');
 
@@ -7,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/build'
   },
   module: {
     rules: [
@@ -35,11 +36,12 @@ module.exports = {
     ]
   },
   devServer: {
-    publicPath: 'http://localhost:8080/build/'
+    publicPath: '/build'
   },
   plugins: [
     new HtmlkWebpackPlugin({
-      template: './index.html'
+      template: './index.html',
+      filename: './index.html'
     })
   ]
 };

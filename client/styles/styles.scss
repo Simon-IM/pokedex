@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
-  //margin: 0;
-  //padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -23,6 +23,7 @@ ul {
 
 .Logo > img {
   margin-top: 25px;
+  height: 200px;
 }
 
 .PokedexImg {
@@ -35,4 +36,8 @@ ul {
 
 .Results > li {
   border: 1px solid yellow;
+}
+
+.Results > img {
+  height: 130px;
 }
