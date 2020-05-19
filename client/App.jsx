@@ -1,43 +1,38 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/styles.scss';
 
+// components
 import Logo from './components/Logo.jsx';
+import PokedexImg from './components/PokedexImg.jsx';
 import Searchbar from './components/Searchbar.jsx';
 import Results from './components/Results.jsx';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      pokemon: {}
-    };
+const App = () => {
 
-    this.handleClick = this.handleClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
+  const [name, setName] = useState('');
+  const [data, setData] = useState({});
 
-  handleClick() {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.name}`)
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setName(e.target.value.toLowerCase());
+  };
+
+  const handleClick = () => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
       .then(res => res.json())
-      .then(data => this.setState({ pokemon: data }))
+      .then(data => setData(data))
       .catch(error => console.error(`Error: ${error}`));
-  }
+  };
 
-  handleChange(event) {
-    event.preventDefault();
-    this.setState({ name: event.target.value.toLowerCase() });
-  }
-
-  render() {
-    return (
-      <div>
-        <Logo />
-        <Searchbar handleClick={this.handleClick} handleChange={this.handleChange}/>
-        <Results data={this.state.pokemon}/>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="App">
+      <Logo />
+      <PokedexImg />
+      <Searchbar handleClick={handleClick} handleChange={handleChange}/>
+      <Results data={data}/>
+    </div>
+  );
+};
 
 export default App;

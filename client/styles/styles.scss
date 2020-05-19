@@ -2,14 +2,42 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
 body {
   background-color: red;
 }
 
+
 ul {
-  padding: 0;
+  padding: 15px;
   list-style-type: none;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Logo > img {
+  margin-top: 25px;
+  height: 200px;
+}
+
+.PokedexImg {
+  margin-bottom: 20px;
+}
+
+.Searchbar > input, button {
+  //width: 100%;
+}
+
+.Results > li {
+  border: 1px solid yellow;
+}
+
+.Results > img {
+  height: 130px;
 }
